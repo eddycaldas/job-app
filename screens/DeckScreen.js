@@ -4,8 +4,11 @@ import { connect } from 'react-redux';
 import { MapView } from 'expo';
 import { Card, Button } from 'react-native-elements';
 import Swipe from '../components/Swipe';
+import * as actions from '../actions';
+import { getJobs } from '../actions/job_actions'
 
 class DeckScreen extends Component {
+  state = {jobs: []}
   renderCard(job) {
     const initialRegion = {
       longitude: job.longitude,
@@ -29,27 +32,48 @@ class DeckScreen extends Component {
           <Text>{job.formattedRelativeTime}</Text>
         </View>
         <Text>
-          {job.snippet.replace(/<b>/g, '').replace(/<\/b/g, '')}
+          {job.snippet.replace(/<b>/g, '').replace(/<\/b>/g, '')}
         </Text>
       </Card>
     )    
   }
   
+  componentDidMount() {
+    this.setState({error: null})
+    
+    getJobs({
+      longitude: -104.9903,
+      latitude: 39.7392,
+      longitudeDelta: 0.04,
+      latitudeDelta: 0.09
+    })
+    .then(jobs => {
+      this.setState({jobs})
+    })
+    .catch(err => {
+      console.error('ERROR: DeckScreen:componentDidMount', err);
+      this.setState({error: err.message})
+    })
+  }
+  
   renderNoMoreCards() {
     return (
       <Card title="No more jobs">
-
+        <Text>No more ese</Text>
       </Card>
     )
   }
   
   render() {
+    console.log('deckScreen',this.state.jobs);
     return (
-      <View>
+      <View style={{ marginTop: 10 }}>
         <Swipe 
-          data={this.props.jobs}
+          data={this.state.jobs}
           renderCard={this.renderCard}
           renderNoMoreCards={this.renderNoMoreCards}
+          onSwipeRight={job => this.props.likeJob(job)}
+          keyProp= { "jobkey" }
         />
       </View>
     );
@@ -68,4 +92,4 @@ function mapStateToProps({ jobs }) {
   return { jobs: jobs.results };
 }
 
-export default connect(mapStateToProps)(DeckScreen);
+export default connect(mapStateToProps, actions)(DeckScreen);

@@ -3,6 +3,7 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import { MapView } from 'expo';
 import { connect } from 'react-redux';
 import { Button } from 'react-native-elements';
+import {getZipCode } from '../actions/job_actions'
 
 import * as actions from '../actions';
 
@@ -20,14 +21,19 @@ class MapScreen extends Component {
     setTimeout(() => this.setState({ mapLoaded: true }), 300);
   }
    onRegionChangeComplete = (region) => {
-     // console.log(region);
-     this.setState({ region });
+   console.log('MapScreen.onRegionChangeComplete',region, this.state)
+     this.setState( {region} );
    }
    
+   
+   
    onButtonPress = () => {
-     this.props.fetchJobs(this.state.region, () => {
+     // getZipCode({latitude: 39.8, longitude: -104})
+     // .then(console.log.bind(console, 'zipCode'))
+     // .catch(console.error.bind(console, 'failZipCode'))
+     // this.props.fetchJobs(this.state.region, () => {
        this.props.navigation.navigate('deck');
-     });
+     // });
    }
    
   render() {

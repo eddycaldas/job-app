@@ -1,0 +1,26 @@
+console.error: "ERROR: DeckScreen:componentDidMount", {"line":115217,"column":24,"sourceURL":"http://packager.9a-r8q.eddycaldas.job.exp.direct:80/node_modules/expo/AppEntry.bundle?platform=ios&dev=true&strict=false&minify=false&hot=false&assetPlugin=/Users/eddycaldas/job/node_modules/expo/tools/hashAssetFiles","config":{"transformRequest":{},"transformResponse":{},"timeout":0,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN","maxContentLength":-1,"headers":{"Accept":"application/json, text/plain, */*"},"method":"get","url":"https://maps.googleapis.com/maps/api/geocode/json?latlng=undefined,undefined"},"response":{"data":{"error_message":"Invalid request. Invalid 'latlng' parameter.","results":[],"status":"INVALID_REQUEST"},"status":400,"headers":{"content-type":"application/json; charset=UTF-8","access-control-allow-origin":"*","cache-control":"no-cache, must-revalidate","alt-svc":"quic=\":443\"; ma=2592000; v=\"41,39,38,37,35\"","pragma":"no-cache","content-encoding":"gzip","x-xss-protection":"1; mode=block","content-length":"125","x-frame-options":"SAMEORIGIN","expires":"Fri, 01 Jan 1990 00:00:00 GMT","server":"mafe","date":"Tue, 14 Nov 2017 01:13:47 GMT"},"config":{"transformRequest":{},"transformResponse":{},"timeout":0,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN","maxContentLength":-1,"headers":{"Accept":"application/json, text/plain, */*"},"method":"get","url":"https://maps.googleapis.com/maps/api/geocode/json?latlng=undefined,undefined"},"request":{"UNSENT":0,"OPENED":1,"HEADERS_RECEIVED":2,"LOADING":3,"DONE":4,"readyState":4,"status":400,"timeout":0,"withCredentials":true,"upload":{},"_aborted":false,"_hasError":false,"_method":"GET","_response":"{\n   \"error_message\" : \"Invalid request. Invalid 'latlng' parameter.\",\n   \"results\" : [],\n   \"status\" : \"INVALID_REQUEST\"\n}\n","_url":"https://maps.googleapis.com/maps/api/geocode/json?latlng=undefined,undefined","_timedOut":false,"_trackingName":"unknown","_incrementalEvents":false,"responseHeaders":{"Content-Type":"application/json; charset=UTF-8","Access-Control-Allow-Origin":"*","Cache-Control":"no-cache, must-revalidate","alt-svc":"quic=\":443\"; ma=2592000; v=\"41,39,38,37,35\"","Pragma":"no-cache","Content-Encoding":"gzip","x-xss-protection":"1; mode=block","Content-Length":"125","x-frame-options":"SAMEORIGIN","Expires":"Fri, 01 Jan 1990 00:00:00 GMT","Server":"mafe","Date":"Tue, 14 Nov 2017 01:13:47 GMT"},"_requestId":null,"_headers":{"accept":"application/json, text/plain, */*"},"_responseType":"","_sent":true,"_lowerCaseResponseHeaders":{"content-type":"application/json; charset=UTF-8","access-control-allow-origin":"*","cache-control":"no-cache, must-revalidate","alt-svc":"quic=\":443\"; ma=2592000; v=\"41,39,38,37,35\"","pragma":"no-cache","content-encoding":"gzip","x-xss-protection":"1; mode=block","content-length":"125","x-frame-options":"SAMEORIGIN","expires":"Fri, 01 Jan 1990 00:00:00 GMT","server":"mafe","date":"Tue, 14 Nov 2017 01:13:47 GMT"},"_subscriptions":[],"responseURL":"https://maps.googleapis.com/maps/api/geocode/json?latlng=undefined,undefined"}}}
+
+newConsoleFunc
+    Logs.js:190:21
+error
+    YellowBox.js:69:16
+<unknown>
+    DeckScreen.js:49:20
+tryCallOne
+    core.js:37:14
+<unknown>
+    core.js:123:25
+_callTimer
+    JSTimers.js:148:6
+_callImmediatesPass
+    JSTimers.js:196:17
+callImmediates
+    JSTimers.js:464:11
+__callImmediates
+    MessageQueue.js:282:4
+<unknown>
+    MessageQueue.js:137:6
+__guard
+    MessageQueue.js:269:6
+flushedQueue
+    MessageQueue.js:136:17

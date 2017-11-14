@@ -1,6 +1,7 @@
 import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import  { Card, Button } from 'react-native-elements';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 
@@ -10,11 +11,14 @@ import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import MapScreen from './screens/MapScreen';
 import DeckScreen from './screens/DeckScreen';
-import SettingScreen from './screens/SettingScreen';
+import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
 
 
+
+
 export default class App extends React.Component {
+  
   render() {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
@@ -23,19 +27,21 @@ export default class App extends React.Component {
         screen: TabNavigator({
           map: { screen: MapScreen },
           deck: { screen: DeckScreen },
-          review: {
-            screen: StackNavigator({
-              review: { screen: ReviewScreen },
-              settings: { screen: SettingScreen }
-            })
-          }
+          // review: {
+          //   screen: StackNavigator({
+          //     review: { screen: ReviewScreen },
+          //     settings: { screen: SettingsScreen }
+          //   })
+          // }
         })
       }
     }, {
       navigationOptions: {
         tabBarVisible : false 
       },
-      lazy: true
+      lazy: true,
+      swipeEnabled: false,
+      animationEnabled: false
     });
     
     return (
